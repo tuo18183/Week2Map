@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Map of US Cities</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+</head>
+<body>
+
+  <div id="map" style="width: 600px; height: 400px"></div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <script>
+
+  var map = L.map('map').setView([37, -100], 4);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  var newYork = L.marker([40.7128, -74.0059]).addTo(map)
+    .bindPopup('New York City');
+
+  var chicago = L.marker([41.8781, -87.6298]).addTo(map)  
+    .bindPopup('Chicago');
+
+  var losAngeles = L.marker([34.0522, -118.2437]).addTo(map)
+    .bindPopup('Los Angeles');
+
+  </script>
+
+</body>
+</html>
